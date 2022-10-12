@@ -154,4 +154,9 @@ return {
   ["mg979/vim-visual-multi"] = {},
 
   ["folke/which-key.nvim"] = { disable = false },
+  ["iamcco/markdown-preview.nvim"] = {
+    run = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+  },
 }
