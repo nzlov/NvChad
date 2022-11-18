@@ -160,11 +160,11 @@ return {
   },
   gitsigns = {
     n = {
-      ["<leader>gb"] = {
+      ["<leader>df"] = {
         function()
-          require("gitsigns").toggle_current_line_blame()
+          require("gitsigns").diffthis()
         end,
-        "Blame line",
+        "Diff This",
       },
     },
   },
