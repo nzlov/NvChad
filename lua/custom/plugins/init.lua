@@ -63,7 +63,6 @@ return {
   },
   ["neovim/nvim-lspconfig"] = {
     config = function()
-      require "plugins.configs.lspconfig"
       require "custom.plugins.lspconfigs"
     end,
   },
@@ -135,19 +134,22 @@ return {
   },
 
   -- Debugger management
-  ["Pocco81/DAPInstall.nvim"] = {
-    commit = "24923c3819a450a772bb8f675926d530e829665f",
-    -- event = "BufWinEnter",
-    -- event = "BufRead",
-    config = function()
-      require("custom.plugins.dap-install").setup()
-    end,
-  },
+  ["Pocco81/dap-buddy.nvim"] = {},
   ["rcarriga/nvim-dap-ui"] = {
     config = function()
       require("dapui").setup()
+
+      local dap, dapui = require "dap", require "dapui"
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
     end,
-    ft = { "go" },
     requires = { "mfussenegger/nvim-dap" },
   },
   ["mbbill/undotree"] = {},
@@ -157,6 +159,16 @@ return {
   ["iamcco/markdown-preview.nvim"] = {
     run = function()
       vim.fn["mkdp#util#install"]()
+    end,
+  },
+  ["akinsho/flutter-tools.nvim"] = {
+    ft = { "dart" },
+    config = function()
+      require("flutter-tools").setup {
+        debugger = {
+          enabled = true,
+        },
+      }
     end,
   },
 }
