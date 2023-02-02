@@ -8,11 +8,11 @@ local b = null_ls.builtins
 
 local sources = {
   b.code_actions.gomodifytags,
-  b.formatting.gofumpt,
   b.formatting.goimports,
-  b.formatting.goimports_reviser,
+  b.formatting.golines.with { args = { "-m", "80" } },
 
-  b.diagnostics.golangci_lint,
+  -- b.diagnostics.golangci_lint,
+  b.diagnostics.staticcheck,
 
   b.formatting.stylua,
 
