@@ -11,8 +11,8 @@ local sources = {
   b.formatting.goimports,
   b.formatting.golines.with { args = { "-m", "80" } },
 
-  -- b.diagnostics.golangci_lint,
-  b.diagnostics.staticcheck,
+  b.diagnostics.golangci_lint,
+  -- b.diagnostics.staticcheck,
 
   b.formatting.stylua,
 
