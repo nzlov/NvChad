@@ -53,11 +53,11 @@ return {
         "lsp declaration",
       },
       ["gd"] = {
-        "<cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>",
+        "<cmd> Telescope lsp_definitions<cr>",
         "lsp definition",
       },
       ["gr"] = {
-        "<cmd>lua require'telescope.builtin'.lsp_references{}<cr>",
+        "<cmd> Telescope lsp_references<cr>",
         "lsp references",
       },
       ["[d"] = {
@@ -85,11 +85,11 @@ return {
         "lsp implementation",
       },
       ["<leader>ld"] = {
-        "<cmd>lua require'telescope.builtin'.diagnostics{bufnr=0}<cr>",
+        "<cmd> Telescope diagnostics bufnr=0<cr>",
         "Document Diagnostics",
       },
       ["<leader>ls"] = {
-        "<cmd> Telescope lsp_document_symbols<cr>",
+        "<cmd> Telescope lsp_document_symbols symbol_width=0.9<cr>",
         "Document Symbols",
       },
       ["<leader>lr"] = {
@@ -100,7 +100,7 @@ return {
       },
       ["<leader>lR"] = { "<cmd> LspRestart <CR>", "Restart LSP" },
       ["<leader>lc"] = {
-        "<cmd>lua require'telescope.builtin'.lsp_code_actions{}<cr>",
+        "<cmd> Telescope lsp_code_actions <cr>",
         "Code Action",
       },
       ["<leader>lf"] = {
@@ -110,7 +110,10 @@ return {
         "lsp formatting",
       },
       ["<leader>lw"] = { "", "workspaces" },
-      ["<leader>lws"] = { "<cmd> Telescope lsp_workspace_symbols <CR>", "Workspace Symbols" },
+      ["<leader>lws"] = {
+        "<cmd> Telescope lsp_workspace_symbols <CR>",
+        "Workspace Symbols",
+      },
       ["<leader>lwa"] = {
         function()
           vim.lsp.buf.add_workspace_folder()
