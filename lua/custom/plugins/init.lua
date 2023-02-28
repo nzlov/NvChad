@@ -1,6 +1,8 @@
 return {
   ["folke/which-key.nvim"] = {
     disable = false,
+    event = "VimEnter",
+    keys = {},
     config = function()
       require "custom.plugins.which-key"
     end,
