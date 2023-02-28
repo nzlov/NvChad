@@ -1,4 +1,10 @@
 return {
+  ["folke/which-key.nvim"] = {
+    disable = false,
+    config = function()
+      require "custom.plugins.which-key"
+    end,
+  },
   ["williamboman/mason.nvim"] = {
     override_options = {
       ensure_installed = {
@@ -154,8 +160,6 @@ return {
   },
   ["mbbill/undotree"] = {},
   ["mg979/vim-visual-multi"] = {},
-
-  ["folke/which-key.nvim"] = { disable = false },
   ["iamcco/markdown-preview.nvim"] = {
     run = function()
       vim.fn["mkdp#util#install"]()
