@@ -91,6 +91,7 @@ wk.register {
       r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
       s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
       q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+      e = { "<cmd>lua require'dapui'.eval()<cr>", "Eval" },
     },
     p = {
       name = "Packer",
