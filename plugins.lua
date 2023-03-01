@@ -71,6 +71,10 @@ local plugins = {
   },
 
   {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = overrides.indentblankline,
+  },
+  {
     "NvChad/nvterm",
     opts = overrides.nvterm,
   },
@@ -125,7 +129,10 @@ local plugins = {
     },
   },
 
-  { "mbbill/undotree" },
+  {
+    "mbbill/undotree",
+    cmd = { "UndotreeToggle" },
+  },
   { "mg979/vim-visual-multi" },
   {
     "iamcco/markdown-preview.nvim",
@@ -135,10 +142,10 @@ local plugins = {
   },
 
   -- To make a plugin not be loaded
-  {
-    "NvChad/nvim-colorizer.lua",
-    enabled = true,
-  },
+  -- {
+  --   "NvChad/nvim-colorizer.lua",
+  --   enabled = true,
+  -- },
 
   -- Uncomment if you want to re-enable which-key
   -- {
