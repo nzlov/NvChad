@@ -4,6 +4,8 @@ local M = {}
 M.disabled = {
   n = {
     ["<leader>uu"] = "",
+    ["<leader>n"] = "",
+    ["<leader>rn"] = "",
     ["<C-c>"] = "",
 
     -- lsp
