@@ -1,10 +1,10 @@
+---@type MappingsTable
 local M = {}
 
 M.disabled = {
   n = {
     ["<leader>uu"] = "",
-    ["<leader>n"] = "",
-    ["<leader>rn"] = "",
+    ["<C-c>"] = "",
 
     -- lsp
     ["gD"] = "",
@@ -59,4 +59,5 @@ M.disabled = {
     ["<leader>td"] = "",
   },
 }
+
 return M

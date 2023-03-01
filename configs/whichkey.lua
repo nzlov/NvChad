@@ -1,5 +1,13 @@
 local wk = require "which-key"
 wk.register {
+  ["s"] = {
+    "<cmd>HopChar1<cr>",
+    "Search Char",
+  },
+  ["S"] = {
+    "<cmd>HopWord<cr>",
+    "Search Word",
+  },
   ["]g"] = {
     function()
       if vim.wo.diff then
@@ -32,6 +40,7 @@ wk.register {
 }
 wk.register {
   ["<leader>"] = {
+    L = { "<cmd>Lazy<CR>", "Lazy" },
     q = { "<cmd>q!<CR>", "Exit" },
     w = { "<cmd>w<CR>", "Save File" },
     h = { "<cmd>nohlsearch<CR>", "No Highlight" },
@@ -68,13 +77,6 @@ wk.register {
         "Sort by language",
       },
     },
-    -- " Available Debug Adapters:
-    -- "   https://microsoft.github.io/debug-adapter-protocol/implementors/adapters/
-    -- " Adapter configuration and installation instructions:
-    -- "   https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
-    -- " Debug Adapter protocol:
-    -- "   https://microsoft.github.io/debug-adapter-protocol/
-    -- " Debugging
     d = {
       name = "Debug",
       t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
@@ -93,15 +95,15 @@ wk.register {
       q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
       e = { "<cmd>lua require'dapui'.eval()<cr>", "Eval" },
     },
-    p = {
-      name = "Packer",
-      c = { "<cmd>PackerCompile<cr>", "Compile" },
-      i = { "<cmd>PackerInstall<cr>", "Install" },
-      r = { "<cmd>lua require('lvim.utils').reload_lv_config()<cr>", "Reload" },
-      s = { "<cmd>PackerSync<cr>", "Sync" },
-      S = { "<cmd>PackerStatus<cr>", "Status" },
-      u = { "<cmd>PackerUpdate<cr>", "Update" },
-    },
+    -- p = {
+    --   name = "Packer",
+    --   c = { "<cmd>PackerCompile<cr>", "Compile" },
+    --   i = { "<cmd>PackerInstall<cr>", "Install" },
+    --   r = { "<cmd>lua require('lvim.utils').reload_lv_config()<cr>", "Reload" },
+    --   s = { "<cmd>PackerSync<cr>", "Sync" },
+    --   S = { "<cmd>PackerStatus<cr>", "Status" },
+    --   u = { "<cmd>PackerUpdate<cr>", "Update" },
+    -- },
     g = {
       name = "Git",
       j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
@@ -127,7 +129,6 @@ wk.register {
         "Git Diff",
       },
     },
-    --
     l = {
       name = "LSP",
       d = { "<cmd> Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
