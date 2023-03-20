@@ -76,11 +76,15 @@ M.cmp = {
   preselect = cmp.PreselectMode.None,
   sources = {
     { name = "cmp_tabnine", group_index = 2 },
+    { name = "codeium", group_index = 2 },
     { name = "luasnip", group_index = 2 },
     { name = "nvim_lsp", group_index = 2 },
     { name = "buffer", group_index = 2 },
     { name = "nvim_lua", group_index = 2 },
     { name = "path", group_index = 2 },
+  },
+  mapping = {
+    ["<C-o>"] = cmp.mapping.complete(),
   },
   sorting = {
     priority_weight = 2,
