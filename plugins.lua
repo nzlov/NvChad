@@ -54,7 +54,7 @@ local plugins = {
           require("cmp_fauxpilot.config"):setup {
             host = "http://192.168.1.120:5000",
             model = "py-model",
-            max_num_results = 2,
+            n = 2,
           }
         end,
       },
