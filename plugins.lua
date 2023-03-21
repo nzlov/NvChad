@@ -48,6 +48,16 @@ local plugins = {
           require("codeium").setup {}
         end,
       },
+      {
+        "nzlov/cmp-fauxpilot",
+        config = function()
+          require("cmp_fauxpilot.config"):setup {
+            host = "http://192.168.1.120:5000",
+            model = "py-model",
+            max_num_results = 2,
+          }
+        end,
+      },
     },
   },
 
