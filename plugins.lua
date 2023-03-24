@@ -63,7 +63,10 @@ local plugins = {
     "nzlov/gpt.nvim",
     config = function()
       require("gpt").setup {
-        host = "gpt.huijia.cf",
+        host = "chater.lanyun1103.top",
+        headers = {
+          Authorization = "Bearer Train",
+        },
       }
     end,
   },
