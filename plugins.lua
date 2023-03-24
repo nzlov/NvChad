@@ -52,13 +52,20 @@ local plugins = {
         "nzlov/cmp-fauxpilot",
         config = function()
           require("cmp_fauxpilot.config"):setup {
-            host = "http://192.168.1.120:5000",
             model = "py-model",
             n = 2,
           }
         end,
       },
     },
+  },
+  {
+    "nzlov/gpt.nvim",
+    config = function()
+      require("gpt").setup {
+        host = "gpt.huijia.cf",
+      }
+    end,
   },
 
   {

@@ -18,6 +18,18 @@ local sources = {
 
   b.diagnostics.golangci_lint,
 
+  -- rust
+  b.formatting.rustfmt,
+
+  -- python
+  b.diagnostics.pylint.with {
+    diagnostics_postprocess = function(diagnostic)
+      diagnostic.code = diagnostic.message_id
+    end,
+  },
+  b.formatting.isort,
+  b.formatting.black,
+
   -- Lua
   b.formatting.stylua,
 

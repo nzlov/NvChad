@@ -62,4 +62,18 @@ M.disabled = {
   },
 }
 
+M.general = {
+  n = {
+    ["<C-g>p"] = { "<cmd>lua require('gpt').prompt() <CR>", "GPT Prompt" },
+    ["<C-g>c"] = { "<cmd>lua require('gpt').cancel() <CR>", "GPT Cancel" },
+  },
+  i = {
+    ["<C-g>p"] = { "<cmd>lua require('gpt').prompt() <CR>", "GPT Prompt" },
+  },
+  v = {
+    ["<C-g>p"] = { "<cmd>lua require('gpt').visual_prompt() <CR>", "GPT Prompt" },
+    ["<C-g>r"] = { "<cmd>lua require('gpt').replace() <CR>", "GPT Rewrite" },
+  },
+}
+
 return M
