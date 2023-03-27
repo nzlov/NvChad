@@ -63,10 +63,8 @@ local plugins = {
     "nzlov/gpt.nvim",
     config = function()
       require("gpt").setup {
-        host = "chater.lanyun1103.top",
-        headers = {
-          Authorization = "Bearer Train",
-        },
+        api_key = os.getenv "OPENAI_API_KEY",
+        model = "gpt-4",
       }
     end,
   },
