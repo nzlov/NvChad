@@ -48,15 +48,15 @@ local plugins = {
           require("codeium").setup {}
         end,
       },
-      {
-        "nzlov/cmp-fauxpilot",
-        config = function()
-          require("cmp_fauxpilot.config"):setup {
-            host = "http://192.168.1.109:5000",
-            n = 2,
-          }
-        end,
-      },
+      -- {
+      --   "nzlov/cmp-fauxpilot",
+      --   config = function()
+      --     require("cmp_fauxpilot.config"):setup {
+      --       host = "http://192.168.1.109:5000",
+      --       n = 2,
+      --     }
+      --   end,
+      -- },
       -- {
       --   "nzlov/cmp-tabby",
       --   config = function()
