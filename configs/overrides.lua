@@ -75,6 +75,7 @@ M.nvimtree = {
 M.cmp = {
   preselect = cmp.PreselectMode.None,
   sources = {
+    { name = "cmp_tabby", group_index = 2 },
     { name = "cmp_tabnine", group_index = 2 },
     { name = "codeium", group_index = 2 },
     { name = "cmp_fauxpilot", group_index = 2 },

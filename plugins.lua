@@ -52,21 +52,20 @@ local plugins = {
         "nzlov/cmp-fauxpilot",
         config = function()
           require("cmp_fauxpilot.config"):setup {
-            model = "py-model",
+            host = "http://192.168.1.109:5000",
             n = 2,
           }
         end,
       },
+      -- {
+      --   "nzlov/cmp-tabby",
+      --   config = function()
+      --     require("cmp_tabby.config"):setup {
+      --       host = "http://192.168.1.109:5000",
+      --     }
+      --   end,
+      -- },
     },
-  },
-  {
-    "nzlov/gpt.nvim",
-    config = function()
-      require("gpt").setup {
-        api_key = os.getenv "OPENAI_API_KEY",
-        model = "gpt-3.5-turbo",
-      }
-    end,
   },
 
   {
