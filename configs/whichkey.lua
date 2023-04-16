@@ -52,6 +52,7 @@ wk.register {
       name = "Toggle",
       n = { "<cmd> set nu! <CR>", "toggle line number" },
       r = { "<cmd> set rnu! <CR>", "toggle relative number" },
+      t = { "<cmd> lua require('base46').toggle_theme() <CR>", "toggle theme" },
     },
     b = {
       name = "Buffers",

@@ -40,6 +40,7 @@ M.mason = {
     "goimports",
     "golangci-lint",
     "delve",
+    "golines",
   },
 }
 
