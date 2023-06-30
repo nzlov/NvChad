@@ -27,27 +27,28 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     opts = overrides.cmp,
     dependencies = {
-      {
-        "tzachar/cmp-tabnine",
-        build = "./install.sh",
-        config = function()
-          local tabnine = require "cmp_tabnine.config"
-          tabnine:setup {
-            max_lines = 1000,
-            max_num_results = 20,
-            sort = true,
-            run_on_every_keystroke = true,
-            snippet_placeholder = "..",
-            show_prediction_strength = true,
-          }
-        end,
-      },
-      {
-        "jcdickinson/codeium.nvim",
-        config = function()
-          require("codeium").setup {}
-        end,
-      },
+
+      -- {
+      --   "tzachar/cmp-tabnine",
+      --   build = "./install.sh",
+      --   config = function()
+      --     local tabnine = require "cmp_tabnine.config"
+      --     tabnine:setup {
+      --       max_lines = 1000,
+      --       max_num_results = 20,
+      --       sort = true,
+      --       run_on_every_keystroke = true,
+      --       snippet_placeholder = "..",
+      --       show_prediction_strength = true,
+      --     }
+      --   end,
+      -- },
+      -- {
+      --   "jcdickinson/codeium.nvim",
+      --   config = function()
+      --     require("codeium").setup {}
+      --   end,
+      -- },
       -- {
       --   "nzlov/cmp-fauxpilot",
       --   config = function()
@@ -175,6 +176,9 @@ local plugins = {
   --   "folke/which-key.nvim",
   --   enabled = true,
   -- },
+  {
+    "mfussenegger/nvim-jdtls",
+  },
 }
 
 return plugins

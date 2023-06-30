@@ -34,9 +34,10 @@ wk.register {
     "Jump to prev hunk",
     opts = { expr = true },
   },
-  ["gd"] = { "<cmd> Telescope lsp_definitions<cr>", "lsp definition" },
-  ["gr"] = { "<cmd> Telescope lsp_references<cr>", "lsp references" },
-  ["gi"] = { "<cmd> Telescope lsp_implementations<cr>", "lsp implementations" },
+  ["gd"] = { "<cmd> Telescope lsp_definitions<cr>", "LSP Definition" },
+  ["gr"] = { "<cmd> Telescope lsp_references<cr>", "LSP References" },
+  ["gi"] = { "<cmd> Telescope lsp_implementations<cr>", "LSP Implementations" },
+  ["K"] = { "<cmd> lua vim.lsp.buf.hover()<cr>", "LSP Hover" },
 }
 wk.register {
   ["<leader>"] = {
