@@ -180,7 +180,7 @@ local plugins = {
     "mfussenegger/nvim-jdtls",
     ft = "java",
     config = function()
-      require "custom.configs.jdtls"
+      require "custom.ftplugin.java"
     end,
   },
 }
