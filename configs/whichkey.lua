@@ -137,7 +137,7 @@ wk.register {
       d = { "<cmd> Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
       D = { "<cmd> Telescope diagnostics <cr>", "Workspace Diagnostics" },
       s = { "<cmd> Telescope lsp_document_symbols symbol_width=0.9<cr>", "Document Symbols" },
-      S = { "<cmd> Telescope lsp_workspace_symbols symbol_width=0.9<cr>", "Workspace Symbols" },
+      S = { "<cmd> Telescope lsp_dynamic_workspace_symbols symbol_width=0.9<cr>", "Workspace Symbols" },
       f = { "<cmd>lua vim.lsp.buf.format() <cr>", "Format" },
       i = {},
       I = { "<cmd>LspInfo<cr>", "Info" },
