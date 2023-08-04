@@ -43,12 +43,12 @@ local plugins = {
       --     }
       --   end,
       -- },
-      -- {
-      --   "jcdickinson/codeium.nvim",
-      --   config = function()
-      --     require("codeium").setup {}
-      --   end,
-      -- },
+      {
+        "jcdickinson/codeium.nvim",
+        config = function()
+          require("codeium").setup {}
+        end,
+      },
       -- {
       --   "nzlov/cmp-fauxpilot",
       --   config = function()
@@ -99,6 +99,18 @@ local plugins = {
     opts = overrides.indentblankline,
   },
   {
+    "nvim-telescope/telescope.nvim",
+    opts = overrides.telescope,
+    dependencies = {
+      {
+        "nvim-telescope/telescope-ui-select.nvim",
+        config = function()
+          require("telescope").load_extension "ui-select"
+        end,
+      },
+    },
+  },
+  {
     "NvChad/nvterm",
     opts = overrides.nvterm,
   },
@@ -137,17 +149,7 @@ local plugins = {
       {
         "rcarriga/nvim-dap-ui",
         config = function()
-          require("dapui").setup()
-          local dap, dapui = require "dap", require "dapui"
-          dap.listeners.after.event_initialized["dapui_config"] = function()
-            dapui.open()
-          end
-          dap.listeners.before.event_terminated["dapui_config"] = function()
-            dapui.close()
-          end
-          dap.listeners.before.event_exited["dapui_config"] = function()
-            dapui.close()
-          end
+          require("custom.configs.dapui").setup()
         end,
       },
     },
@@ -160,6 +162,8 @@ local plugins = {
   { "mg979/vim-visual-multi" },
   {
     "iamcco/markdown-preview.nvim",
+    ft = "markdown",
+    lazy = true,
     run = function()
       vim.fn["mkdp#util#install"]()
     end,

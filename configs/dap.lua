@@ -7,13 +7,13 @@ end
 local M = {}
 M.setup = function()
   vim.fn.sign_define("DapBreakpoint", {
-    text = "",
+    text = "",
     texthl = "LspDiagnosticsSignError",
     linehl = "",
     numhl = "",
   })
   vim.fn.sign_define("DapBreakpointRejected", {
-    text = "",
+    text = "",
     texthl = "LspDiagnosticsSignHint",
     linehl = "",
     numhl = "",

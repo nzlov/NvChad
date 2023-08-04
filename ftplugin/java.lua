@@ -1,4 +1,5 @@
 vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
 
 local autocmd = vim.api.nvim_create_autocmd
 
@@ -93,7 +94,13 @@ autocmd("FileType", {
       --
       -- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
       init_options = {
-        bundles = {},
+        bundles = {
+          vim.fn.glob(
+            home
+              .. "/workspaces/java/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin-*.jar",
+            1
+          ),
+        },
       },
     }
     require("jdtls").start_or_attach(config)

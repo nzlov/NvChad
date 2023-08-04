@@ -34,6 +34,18 @@ wk.register {
     "Jump to prev hunk",
     opts = { expr = true },
   },
+  ["[d"] = {
+    function()
+      vim.diagnostic.goto_prev { float = { border = "rounded" } }
+    end,
+    "Goto prev",
+  },
+  ["]d"] = {
+    function()
+      vim.diagnostic.goto_next { float = { border = "rounded" } }
+    end,
+    "Goto next",
+  },
   ["gd"] = { "<cmd> Telescope lsp_definitions<cr>", "LSP Definition" },
   ["gr"] = { "<cmd> Telescope lsp_references<cr>", "LSP References" },
   ["gi"] = { "<cmd> Telescope lsp_implementations<cr>", "LSP Implementations" },
@@ -85,17 +97,16 @@ wk.register {
       b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
       c = { "<cmd>lua require'dap'.continue()<cr>", "Continue" },
       C = { "<cmd>lua require'dap'.run_to_cursor()<cr>", "Run To Cursor" },
-      d = { "<cmd>lua require'dap'.disconnect()<cr>", "Disconnect" },
-      g = { "<cmd>lua require'dap'.session()<cr>", "Get Session" },
-      G = { "<cmd>lua require('dapui').toggle()<cr>", "UI Toggle" },
+      Q = { "<cmd>lua require'dap'.terminate()<cr>", "Quit" },
       i = { "<cmd>lua require'dap'.step_into()<cr>", "Step Into" },
       o = { "<cmd>lua require'dap'.step_over()<cr>", "Step Over" },
       u = { "<cmd>lua require'dap'.step_out()<cr>", "Step Out" },
       p = { "<cmd>lua require'dap'.pause.toggle()<cr>", "Pause" },
       r = { "<cmd>lua require'dap'.repl.toggle()<cr>", "Toggle Repl" },
-      s = { "<cmd>lua require'dap'.continue()<cr>", "Start" },
-      q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
+      R = { "<cmd>lua require'dap'.restart()<cr>", "Restart" },
+      g = { "<cmd>lua require'dapui'.toggle()<cr>", "UI Toggle" },
       e = { "<cmd>lua require'dapui'.eval()<cr>", "Eval" },
+      l = { "<cmd>lua require'dapui'.float_element('console', {position = 'center'})<cr>", "Float Console" },
     },
     -- p = {
     --   name = "Packer",
@@ -134,7 +145,7 @@ wk.register {
     l = {
       name = "LSP",
       a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-      d = { "<cmd> Telescope diagnostics bufnr=0<cr>", "Document Diagnostics" },
+      d = { "<cmd> Telescope diagnostics bufnr=0 theme=dropdown<cr>", "Document Diagnostics" },
       D = { "<cmd> Telescope diagnostics <cr>", "Workspace Diagnostics" },
       s = { "<cmd> Telescope lsp_document_symbols symbol_width=0.9<cr>", "Document Symbols" },
       S = { "<cmd> Telescope lsp_dynamic_workspace_symbols symbol_width=0.9<cr>", "Workspace Symbols" },

@@ -21,6 +21,20 @@ M.treesitter = {
   },
 }
 
+M.telescope = {
+  defaults = {
+    selection_caret = " ",
+    layout_config = {
+      preview_cutoff = 0,
+    },
+  },
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_cursor {},
+    },
+  },
+}
+
 M.mason = {
   ensure_installed = {
     -- lua stuff
