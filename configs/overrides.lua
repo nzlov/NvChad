@@ -3,21 +3,54 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
-    "vim",
-    "lua",
-    "html",
+    "c",
     "css",
-    "javascript",
     "go",
     "gomod",
     "gowork",
-    "json",
     "graphql",
-    "yaml",
-    "c",
+    "html",
+    "java",
+    "javascript",
+    "json",
+    "lua",
     "markdown",
     "markdown_inline",
-    "java",
+    "proto",
+    "vim",
+    "yaml",
+  },
+}
+
+M.mason = {
+  ensure_installed = {
+    -- lua stuff
+    "lua-language-server",
+    "stylua",
+
+    -- web dev stuff
+    "css-lsp",
+    "html-lsp",
+    "typescript-language-server",
+    "prettierd",
+
+    -- graphql
+    "graphql-language-service-cli",
+
+    -- go
+    "delve",
+    "gopls",
+    "goimports",
+    "golangci-lint",
+    "golines",
+
+    --java
+    "jdtls",
+
+    -- other
+    "json-lsp",
+    "yaml-language-server",
+    "protolint",
   },
 }
 
@@ -32,30 +65,6 @@ M.telescope = {
     ["ui-select"] = {
       require("telescope.themes").get_cursor {},
     },
-  },
-}
-
-M.mason = {
-  ensure_installed = {
-    -- lua stuff
-    "lua-language-server",
-    "stylua",
-
-    "json-lsp",
-    "yaml-language-server",
-
-    -- web dev stuff
-    "css-lsp",
-    "html-lsp",
-    "typescript-language-server",
-    "prettierd",
-
-    "graphql-language-service-cli",
-    "gopls",
-    "goimports",
-    "golangci-lint",
-    "delve",
-    "golines",
   },
 }
 

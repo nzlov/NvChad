@@ -106,7 +106,7 @@ wk.register {
       R = { "<cmd>lua require'dap'.restart()<cr>", "Restart" },
       g = { "<cmd>lua require'dapui'.toggle()<cr>", "UI Toggle" },
       e = { "<cmd>lua require'dapui'.eval()<cr>", "Eval" },
-      l = { "<cmd>lua require'dapui'.float_element('console', {position = 'center'})<cr>", "Float Console" },
+      l = { "<cmd>lua require'dapui'.float_element('console', {position = 'center',height=55})<cr>", "Float Console" },
     },
     -- p = {
     --   name = "Packer",

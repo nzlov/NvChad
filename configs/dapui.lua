@@ -19,6 +19,7 @@ M.setup = function()
     element_mappings = {},
     expand_lines = true,
     floating = {
+      max_height = 0.9,
       border = "single",
       mappings = {
         close = { "q", "<Esc>" },

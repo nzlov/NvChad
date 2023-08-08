@@ -10,7 +10,7 @@ local sources = {
 
   -- webdev stuff
   -- b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  b.formatting.prettier, -- so prettier works only on these filetypes
+  b.formatting.prettierd, -- so prettier works only on these filetypes
 
   b.code_actions.gomodifytags,
   b.formatting.goimports,
@@ -29,6 +29,9 @@ local sources = {
   },
   b.formatting.isort,
   b.formatting.black,
+
+  -- protobuf
+  b.formatting.protolint,
 
   -- Lua
   b.formatting.stylua,
