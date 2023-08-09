@@ -152,9 +152,14 @@ local plugins = {
           require("custom.configs.dapui").setup()
         end,
       },
+      {
+        "theHamsta/nvim-dap-virtual-text",
+        config = function()
+          require("custom.configs.dapvirtualtext").setup()
+        end,
+      },
     },
   },
-
   {
     "mbbill/undotree",
     cmd = { "UndotreeToggle" },

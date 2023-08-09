@@ -3,7 +3,7 @@ M.setup = function()
   local config = {
     controls = {
       element = "repl",
-      enabled = false,
+      enabled = true,
       icons = {
         disconnect = "",
         pause = "",
@@ -35,6 +35,10 @@ M.setup = function()
       {
         elements = {
           {
+            id = "repl",
+            size = 0.05,
+          },
+          {
             id = "scopes",
             size = 0.25,
           },
@@ -48,7 +52,7 @@ M.setup = function()
           },
           {
             id = "watches",
-            size = 0.25,
+            size = 0.20,
           },
         },
         position = "left",
@@ -62,7 +66,7 @@ M.setup = function()
           },
         },
         position = "bottom",
-        size = 10,
+        size = 30,
       },
     },
     mappings = {
