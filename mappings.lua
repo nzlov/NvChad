@@ -6,7 +6,7 @@ M.disabled = {
     ["<leader>uu"] = "",
     ["<leader>n"] = "",
     ["<leader>rn"] = "",
-    ["<C-c>"] = "",
+    ["<C-c>"] = "<Esc>",
 
     -- lsp
     ["gD"] = "",
