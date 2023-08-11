@@ -192,6 +192,10 @@ local plugins = {
       require "custom.ftplugin.java"
     end,
   },
+  {
+    "tpope/vim-fugitive",
+    cmd = { "Git" },
+  },
 }
 
 return plugins
