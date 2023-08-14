@@ -168,7 +168,7 @@ wk.register {
       name = "Search",
       f = { "<cmd>Telescope find_files<cr>", "Find File" },
       w = { "<cmd>Telescope live_grep<cr>", "Text" },
-      t = { "<cmd>Telescope colorscheme enable_preview=true<cr>", "Colorscheme" },
+      t = { "<cmd>Telescope themes enable_preview=true<cr>", "Theme" },
       h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
       s = { "<cmd>Telescope grep_string<cr>", "Grep String" },
       M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
