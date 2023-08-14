@@ -15,6 +15,20 @@ local plugins = {
           require "custom.configs.null-ls"
         end,
       },
+      {
+        "mrded/nvim-lsp-notify",
+        config = function()
+          require("lsp-notify").setup {
+            notify = require "notify",
+          }
+        end,
+        dependencies = {
+          {
+            "rcarriga/nvim-notify",
+            config = function() end,
+          },
+        },
+      },
     },
 
     config = function()
