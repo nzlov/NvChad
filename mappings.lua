@@ -6,7 +6,6 @@ M.disabled = {
     ["<leader>uu"] = "",
     ["<leader>n"] = "",
     ["<leader>rn"] = "",
-    ["<C-c>"] = "<Esc>",
 
     -- lsp
     ["gD"] = "",
@@ -64,13 +63,16 @@ M.disabled = {
 
 M.general = {
   n = {
+    ["<C-c>"] = { "<ESC>", "" },
     ["<C-g>p"] = { "<cmd>lua require('gpt').prompt() <CR>", "GPT Prompt" },
     ["<C-g>c"] = { "<cmd>lua require('gpt').cancel() <CR>", "GPT Cancel" },
   },
   i = {
+    ["<C-c>"] = { "<ESC>", "" },
     ["<C-g>p"] = { "<cmd>lua require('gpt').prompt() <CR>", "GPT Prompt" },
   },
   v = {
+    ["<C-c>"] = { "<ESC>", "" },
     ["<C-g>p"] = { "<cmd>lua require('gpt').visual_prompt() <CR>", "GPT Prompt" },
     ["<C-g>r"] = { "<cmd>lua require('gpt').replace() <CR>", "GPT Rewrite" },
   },
