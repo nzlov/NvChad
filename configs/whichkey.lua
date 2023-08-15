@@ -155,7 +155,7 @@ wk.register {
       I = { "<cmd>LspInfo<cr>", "Info" },
       l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
       q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-      r = { "<cmd>lua require 'nvchad_ui.renamer'.open()<cr>", "Rename" },
+      r = { "<cmd>lua require 'nvchad.renamer'.open()<cr>", "Rename" },
 
       R = { "<cmd>LspRestart<cr>", "Restart" },
       w = {
