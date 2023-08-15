@@ -16,10 +16,11 @@ local plugins = {
         end,
       },
       {
-        "mrded/nvim-lsp-notify",
+        "nzlov/nvim-lsp-notify",
         config = function()
           require("lsp-notify").setup {
             notify = require "notify",
+            excludes = { "null-ls" },
           }
         end,
         dependencies = {
