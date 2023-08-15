@@ -10,6 +10,29 @@ autocmd("BufWritePre", {
   end,
 })
 
+local start = false
+local function handle_progress(_, result, context)
+  local value = result.value
+  if value.kind == "begin" and value.message == "Initialize Workspace" then
+    start = true
+  end
+  if value.kind == "end" and value.message == "Building" and start then
+    require("jdtls.dap").setup_dap_main_class_configs()
+  end
+end
+local function init()
+  if vim.lsp.handlers["$/progress"] then
+    -- There was already a handler, execute it too
+    local old = vim.lsp.handlers["$/progress"]
+    vim.lsp.handlers["$/progress"] = function(...)
+      old(...)
+      handle_progress(...)
+    end
+  else
+    vim.lsp.handlers["$/progress"] = handle_progress
+  end
+end
+
 autocmd("FileType", {
   pattern = "java",
   callback = function()
@@ -104,5 +127,6 @@ autocmd("FileType", {
       },
     }
     require("jdtls").start_or_attach(config)
+    init()
   end,
 })
