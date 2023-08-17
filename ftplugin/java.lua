@@ -6,6 +6,7 @@ local autocmd = vim.api.nvim_create_autocmd
 autocmd("BufWritePre", {
   pattern = "*.java",
   callback = function()
+    require("jdtls").organize_imports()
     vim.lsp.buf.format { async = true }
   end,
 })
