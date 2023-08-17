@@ -49,8 +49,12 @@ lspconfig.gopls.setup {
   cmd = { "gopls", "serve" },
   filetypes = { "go", "gomod" },
   root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  init_options = {
+    usePlaceholders = true,
+  },
   settings = {
     gopls = {
+      gofumpt = true,
       analyses = {
         unusedparams = true,
       },

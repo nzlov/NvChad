@@ -29,10 +29,7 @@ M.mason = {
     "stylua",
 
     -- web dev stuff
-    "css-lsp",
-    "html-lsp",
     "typescript-language-server",
-    "prettierd",
 
     -- graphql
     "graphql-language-service-cli",
@@ -48,7 +45,6 @@ M.mason = {
     "jdtls",
 
     -- other
-    "json-lsp",
     "yaml-language-server",
     "protolint",
   },
