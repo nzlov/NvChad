@@ -26,7 +26,11 @@ local plugins = {
         dependencies = {
           {
             "rcarriga/nvim-notify",
-            config = function() end,
+            config = function()
+              require("notify").setup {
+                top_down = false,
+              }
+            end,
           },
         },
       },
