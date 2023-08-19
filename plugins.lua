@@ -34,7 +34,21 @@ local plugins = {
             "rcarriga/nvim-notify",
             config = function()
               require("notify").setup {
-                top_down = false,
+                background_colour = "NotifyBackground",
+                fps = 60,
+                icons = {
+                  DEBUG = "",
+                  ERROR = "",
+                  INFO = "",
+                  TRACE = "✎",
+                  WARN = "",
+                },
+                level = 2,
+                minimum_width = 50,
+                render = "default",
+                stages = "fade_in_slide_out",
+                timeout = 5000,
+                top_down = true,
               }
             end,
           },
