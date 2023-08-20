@@ -1,4 +1,19 @@
 local wk = require "which-key"
+
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new {
+  cmd = "lazygit",
+  hidden = true,
+  direction = "float",
+  float_opts = {
+    border = "double",
+  },
+}
+
+function _lazygit_toggle()
+  lazygit:toggle()
+end
+
 wk.register {
   ["s"] = {
     "<cmd>HopChar1<cr>",
@@ -54,6 +69,7 @@ wk.register {
 wk.register {
   ["<leader>"] = {
     L = { "<cmd>Lazy<CR>", "Lazy" },
+    a = { "<cmd>AerialToggle!<CR>", "Lazy" },
     q = { "<cmd>q!<CR>", "Exit" },
     w = { "<cmd>w<CR>", "Save File" },
     h = { "<cmd>nohlsearch<CR>", "No Highlight" },
@@ -119,7 +135,7 @@ wk.register {
     -- },
     g = {
       name = "Git",
-      g = { "<cmd>Git<cr>", "Git" },
+      g = { "<cmd>lua _lazygit_toggle()<cr>", "Git" },
       j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
       k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
       l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
