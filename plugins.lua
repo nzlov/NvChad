@@ -3,6 +3,43 @@ local overrides = require "custom.configs.overrides"
 ---@type NvPluginSpec[]
 local plugins = {
 
+  {
+    "rcarriga/nvim-notify",
+    lazy = false,
+    config = function()
+      require("notify").setup {
+                background_colour = "NotifyBackground",
+                fps = 60,
+                icons = {
+                  DEBUG = "",
+                  ERROR = "",
+                  INFO = "",
+                  TRACE = "✎",
+                  WARN = "",
+                },
+                level = 2,
+                minimum_width = 50,
+                render = "default",
+                stages = "fade_in_slide_out",
+                timeout = 5000,
+        top_down = false,
+      }
+      vim.notify = require "notify"
+    end,
+  },
+  {
+    "stevearc/aerial.nvim",
+    opts = {},
+    cmd = { "AerialToggle" },
+    config = function()
+      require("aerial").setup {}
+    end,
+    -- Optional dependencies
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons",
+    },
+  },
   -- Override plugin definition options
 
   {
@@ -25,34 +62,10 @@ local plugins = {
         "nzlov/nvim-lsp-notify",
         config = function()
           require("lsp-notify").setup {
-            notify = require "notify",
+            -- notify = require "notify",
             excludes = { "null-ls" },
           }
         end,
-        dependencies = {
-          {
-            "rcarriga/nvim-notify",
-            config = function()
-              require("notify").setup {
-                background_colour = "NotifyBackground",
-                fps = 60,
-                icons = {
-                  DEBUG = "",
-                  ERROR = "",
-                  INFO = "",
-                  TRACE = "✎",
-                  WARN = "",
-                },
-                level = 2,
-                minimum_width = 50,
-                render = "default",
-                stages = "fade_in_slide_out",
-                timeout = 5000,
-                top_down = true,
-              }
-            end,
-          },
-        },
       },
     },
 
@@ -234,6 +247,10 @@ local plugins = {
   {
     "tpope/vim-fugitive",
     cmd = { "Git" },
+  },
+  {
+    "akinsho/toggleterm.nvim",
+    config = true,
   },
 }
 
