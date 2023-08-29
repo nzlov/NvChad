@@ -6,8 +6,7 @@ local autocmd = vim.api.nvim_create_autocmd
 autocmd("BufWritePre", {
   pattern = "*.java",
   callback = function()
-    require("jdtls").organize_imports()
-    vim.lsp.buf.format { async = true }
+    vim.lsp.buf.format { async = false }
   end,
 })
 
@@ -19,6 +18,7 @@ local function handle_progress(_, result, context)
   end
   if value.kind == "end" and value.message == "Building" and start then
     require("jdtls.dap").setup_dap_main_class_configs()
+    start = false
   end
 end
 local function init()
