@@ -2,31 +2,30 @@ local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
-
-  {
-    "rcarriga/nvim-notify",
-    lazy = false,
-    config = function()
-      require("notify").setup {
-        background_colour = "NotifyBackground",
-        fps = 30,
-        icons = {
-          DEBUG = "",
-          ERROR = "",
-          INFO = "",
-          TRACE = "✎",
-          WARN = "",
-        },
-        level = 2,
-        minimum_width = 50,
-        render = "default",
-        stages = "fade_in_slide_out",
-        timeout = 5000,
-        top_down = false,
-      }
-      vim.notify = require "notify"
-    end,
-  },
+  -- {
+  --   "rcarriga/nvim-notify",
+  --   lazy = false,
+  --   config = function()
+  --     require("notify").setup {
+  --       background_colour = "NotifyBackground",
+  --       fps = 30,
+  --       icons = {
+  --         DEBUG = "",
+  --         ERROR = "",
+  --         INFO = "",
+  --         TRACE = "✎",
+  --         WARN = "",
+  --       },
+  --       level = 2,
+  --       minimum_width = 50,
+  --       render = "default",
+  --       stages = "fade_in_slide_out",
+  --       timeout = 5000,
+  --       top_down = false,
+  --     }
+  --     vim.notify = require "notify"
+  --   end,
+  -- },
   {
     "stevearc/aerial.nvim",
     opts = {},
@@ -58,15 +57,15 @@ local plugins = {
           require "custom.configs.nvim-lint"
         end,
       },
-      {
-        "nzlov/nvim-lsp-notify",
-        config = function()
-          require("lsp-notify").setup {
-            -- notify = require "notify",
-            excludes = { "null-ls" },
-          }
-        end,
-      },
+      -- {
+      --   "nzlov/nvim-lsp-notify",
+      --   config = function()
+      --     require("lsp-notify").setup {
+      --       -- notify = require "notify",
+      --       excludes = { "null-ls" },
+      --     }
+      --   end,
+      -- },
     },
 
     config = function()

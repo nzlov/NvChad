@@ -18,6 +18,9 @@ local function handle_progress(_, result, context)
   end
   if value.kind == "end" and value.message == "Building" and start then
     require("jdtls.dap").setup_dap_main_class_configs()
+    vim.defer_fn(function()
+      require("dap").continue()
+    end, 2000)
     start = false
   end
 end

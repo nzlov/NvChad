@@ -70,7 +70,7 @@ wk.register {
   ["<leader>"] = {
     L = { "<cmd>Lazy<CR>", "Lazy" },
     a = { "<cmd> %y+ <CR>", "Copy whole file" },
-    o = { "<cmd>AerialToggle!<CR>", "Lazy" },
+    o = { "<cmd>AerialToggle!<CR>", "AerialToggle" },
     q = { "<cmd>q!<CR>", "Exit" },
     w = { "<cmd>w<CR>", "Save File" },
     h = { "<cmd>nohlsearch<CR>", "No Highlight" },
