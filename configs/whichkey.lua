@@ -14,6 +14,13 @@ function _lazygit_toggle()
   lazygit:toggle()
 end
 
+function _float_console()
+  require("dapui").float_element(
+    "console",
+    { position = "center", height = math.floor(vim.o.lines * 0.9), width = math.floor(vim.o.columns * 0.8) }
+  )
+end
+
 wk.register {
   ["s"] = {
     "<cmd>HopChar1<cr>",
@@ -123,17 +130,8 @@ wk.register {
       R = { "<cmd>lua require'dap'.restart()<cr>", "Restart" },
       g = { "<cmd>lua require'dapui'.toggle()<cr>", "UI Toggle" },
       e = { "<cmd>lua require'dapui'.eval()<cr>", "Eval" },
-      l = { "<cmd>lua require'dapui'.float_element('console', {position = 'center',height=55})<cr>", "Float Console" },
+      l = { "<cmd>lua _float_console()<cr>", "Float Console" },
     },
-    -- p = {
-    --   name = "Packer",
-    --   c = { "<cmd>PackerCompile<cr>", "Compile" },
-    --   i = { "<cmd>PackerInstall<cr>", "Install" },
-    --   r = { "<cmd>lua require('lvim.utils').reload_lv_config()<cr>", "Reload" },
-    --   s = { "<cmd>PackerSync<cr>", "Sync" },
-    --   S = { "<cmd>PackerStatus<cr>", "Status" },
-    --   u = { "<cmd>PackerUpdate<cr>", "Update" },
-    -- },
     g = {
       name = "Git",
       g = { "<cmd>lua _lazygit_toggle()<cr>", "Git" },
