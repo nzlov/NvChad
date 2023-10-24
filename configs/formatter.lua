@@ -35,13 +35,13 @@ require("formatter").setup {
       },
     },
     graphql = {
-      require("formatter.filetypes.graphql").prettier,
+      require("formatter.filetypes.graphql").prettierd,
     },
     json = {
-      require("formatter.filetypes.json").prettier,
+      require("formatter.filetypes.json").prettierd,
     },
     markdown = {
-      require("formatter.filetypes.markdown").prettier,
+      require("formatter.filetypes.markdown").prettierd,
     },
 
     -- Use the special "*" filetype for defining formatter configurations on
