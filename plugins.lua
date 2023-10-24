@@ -94,12 +94,12 @@ local plugins = {
           }
         end,
       },
-      -- {
-      --   "jcdickinson/codeium.nvim",
-      --   config = function()
-      --     require("codeium").setup {}
-      --   end,
-      -- },
+      {
+        "Exafunction/codeium.nvim",
+        config = function()
+          require("codeium").setup {}
+        end,
+      },
       -- {
       --   "nzlov/cmp-fauxpilot",
       --   config = function()
