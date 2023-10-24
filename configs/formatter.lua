@@ -25,7 +25,6 @@ require("formatter").setup {
     },
     go = {
       require("formatter.filetypes.go").goimports,
-      require("formatter.filetypes.go").golines,
       {
         exe = "golines",
         stdin = true,
@@ -34,6 +33,15 @@ require("formatter").setup {
           "80",
         },
       },
+    },
+    graphql = {
+      require("formatter.filetypes.graphql").prettier,
+    },
+    json = {
+      require("formatter.filetypes.json").prettier,
+    },
+    markdown = {
+      require("formatter.filetypes.markdown").prettier,
     },
 
     -- Use the special "*" filetype for defining formatter configurations on
