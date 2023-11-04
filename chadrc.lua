@@ -9,8 +9,9 @@ M.ui = {
   theme = "one_light",
   hl_override = highlights.override,
   hl_add = highlights.add,
+  lsp_semantic_tokens = true,
 
-  transparency = true,
+  transparency = false,
 
   cmp = {
     style = "default", -- default/flat_light/flat_dark/atom/atom_colored

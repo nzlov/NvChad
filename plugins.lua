@@ -251,6 +251,29 @@ local plugins = {
     "akinsho/toggleterm.nvim",
     config = true,
   },
+  {
+    "f-person/auto-dark-mode.nvim",
+    lazy = false,
+    config = function()
+      require("auto-dark-mode").setup {
+        update_interval = 1000,
+        set_dark_mode = function()
+          print "Dark mode"
+          vim.g.nvchad_theme = "onedark"
+          vim.g.transparency = false
+          require("nvchad.utils").replace_word('theme = "one_light', 'theme = "onedark')
+          require("base46").load_all_highlights()
+        end,
+        set_light_mode = function()
+          print "Light mode"
+          vim.g.nvchad_theme = "one_light"
+          require("nvchad.utils").replace_word('theme = "onedark', 'theme = "one_light')
+          vim.g.transparency = true
+          require("base46").load_all_highlights()
+        end,
+      }
+    end,
+  },
 }
 
 return plugins
