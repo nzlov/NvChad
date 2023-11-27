@@ -78,7 +78,6 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     opts = overrides.cmp,
     dependencies = {
-
       {
         "tzachar/cmp-tabnine",
         build = "./install.sh",
@@ -113,7 +112,7 @@ local plugins = {
       --   "nzlov/cmp-tabby",
       --   config = function()
       --     require("cmp_tabby.config"):setup {
-      --       host = "http://192.168.1.109:5000",
+      --       host = "http://localhost:6080",
       --     }
       --   end,
       -- },
@@ -258,14 +257,12 @@ local plugins = {
       require("auto-dark-mode").setup {
         update_interval = 1000,
         set_dark_mode = function()
-          print "Dark mode"
           vim.g.nvchad_theme = "onedark"
           vim.g.transparency = false
           require("nvchad.utils").replace_word('theme = "one_light', 'theme = "onedark')
           require("base46").load_all_highlights()
         end,
         set_light_mode = function()
-          print "Light mode"
           vim.g.nvchad_theme = "one_light"
           require("nvchad.utils").replace_word('theme = "onedark', 'theme = "one_light')
           vim.g.transparency = true
@@ -273,6 +270,39 @@ local plugins = {
         end,
       }
     end,
+  },
+  {
+    "jackMort/ChatGPT.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("chatgpt").setup {
+        openai_params = {
+          model = "default-model",
+          frequency_penalty = 0,
+          presence_penalty = 0,
+          max_tokens = 300,
+          temperature = 0,
+          top_p = 1,
+          n = 1,
+        },
+        openai_edit_params = {
+          model = "default-model",
+          frequency_penalty = 0,
+          presence_penalty = 0,
+          temperature = 0,
+          top_p = 1,
+          n = 1,
+        },
+        actions_paths = {
+          "~/.config/nvim/lua/custom/actions.json",
+        },
+      }
+    end,
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
   },
 }
 
