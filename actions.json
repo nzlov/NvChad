@@ -13,7 +13,7 @@
   "grammar_correction": {
     "type": "chat",
     "opts": {
-      "template": "Correct this to standard {{lang}}:\n\n{{input}}",
+      "template": "纠正以下语法,使用中文回答:\n\n{{input}}",
       "strategy": "replace",
       "params": {
         "model": "gpt-3.5-turbo"
@@ -30,25 +30,18 @@
   "translate": {
     "type": "chat",
     "opts": {
-      "template": "Translate this into {{lang}}:\n\n{{input}}",
+      "template": "翻译为中文:\n\n{{input}}",
       "strategy": "replace",
       "params": {
         "model": "gpt-3.5-turbo",
         "temperature": 0.3
-      }
-    },
-    "args": {
-      "lang": {
-        "type": "string",
-        "optional": "true",
-        "default": "english"
       }
     }
   },
   "keywords": {
     "type": "chat",
     "opts": {
-      "template": "Extract the main keywords from the following text.\n\n{{input}}",
+      "template": "提取以下文本关键字.\n\n{{input}}",
       "strategy": "replace",
       "params": {
         "model": "gpt-3.5-turbo",
@@ -60,7 +53,7 @@
   "docstring": {
     "type": "chat",
     "opts": {
-      "template": "# An elaborate, high quality docstring for the above function:\n# Writing a good docstring\n\nThis is an example of writing a really good docstring that follows a best practice for the given language. Attention is paid to detailing things like\n* parameter and return types (if applicable)\n* any errors that might be raised or returned, depending on the language\n\nI received the following code:\n\n```{{filetype}}\n{{input}}\n```\n\nThe code with a really good docstring added is below:\n\n```{{filetype}}",
+      "template": "# 为函数精心编写高质量的文档字符串:\n# 撰写优秀的中文文档字符串\n\n这是一个编写真正好的 docstring 的例子，它遵循了给定语言的最佳实践。注意了以下细节\n* parameter and return types (if applicable)\n* any errors that might be raised or returned, depending on the language\n\n我收到了以下代码:\n\n```{{filetype}}\n{{input}}\n```\n\nThe code with a really good docstring added is below:\n\n```{{filetype}}",
       "strategy": "edit",
       "params": {
         "model": "gpt-3.5-turbo",
@@ -71,7 +64,7 @@
   "add_tests": {
     "type": "chat",
     "opts": {
-      "template": "Implement tests for the following code.\n\nCode:\n```{{filetype}}\n{{input}}\n```\n\nTests:\n```{{filetype}}",
+      "template": "为以下代码生成测试代码,使用中文回答.\n\nCode:\n```{{filetype}}\n{{input}}\n```\n\nTests:\n```{{filetype}}",
       "strategy": "append",
       "params": {
         "model": "gpt-3.5-turbo",
@@ -82,7 +75,7 @@
   "optimize_code": {
     "type": "chat",
     "opts": {
-      "template": "Optimize the following code.\n\nCode:\n```{{filetype}}\n{{input}}\n```\n\nOptimized version:\n```{{filetype}}",
+      "template": "优化以下代码,使用中文回答.\n\nCode:\n```{{filetype}}\n{{input}}\n```\n\nOptimized version:\n```{{filetype}}",
       "strategy": "edit",
       "params": {
         "model": "gpt-3.5-turbo",
@@ -93,24 +86,17 @@
   "summarize": {
     "type": "chat",
     "opts": {
-      "template": "Summarize the following text into {{lang}}.\n\nText:\n\"\"\"\n{{input}}\n\"\"\"\n\nSummary:",
+      "template": "总结一下,使用中文回答.\n\nText:\n\"\"\"\n{{input}}\n\"\"\"\n\nSummary:",
       "strategy": "edit",
       "params": {
         "model": "gpt-3.5-turbo"
-      }
-    },
-    "args": {
-      "lang": {
-        "type": "string",
-        "optional": "true",
-        "default": "english"
       }
     }
   },
   "fix_bugs": {
     "type": "chat",
     "opts": {
-      "template": "Fix bugs in the below code\n\nCode:\n```{{filetype}}\n{{input}}\n```\n\nFixed code:\n```{{filetype}}",
+      "template": "修复以下代码的bug,使用中文回答.\n\nCode:\n```{{filetype}}\n{{input}}\n```\n\nFixed code:\n```{{filetype}}",
       "strategy": "edit",
       "params": {
         "model": "gpt-3.5-turbo",
@@ -122,18 +108,11 @@
     "type": "chat",
     "opts": {
       "title": " Explain Code",
-      "template": "Explain the following code into {{lang}}:\n\nCode:\n```{{filetype}}\n{{input}}\n```\n\nUse markdown format.\nHere's what the above code is doing:\n```",
+      "template": "解释以下代码,使用中文回答:\n\nCode:\n```{{filetype}}\n{{input}}\n```\n\nUse markdown format.\nHere's what the above code is doing:\n```",
       "strategy": "display",
       "params": {
         "model": "gpt-3.5-turbo",
         "stop": ["```"]
-      }
-    },
-    "args": {
-      "lang": {
-        "type": "string",
-        "optional": "true",
-        "default": "english"
       }
     }
   },
