@@ -294,6 +294,7 @@ local plugins = {
           top_p = 0.8,
           n = 1,
         },
+        show_quickfixes_cmd = "Telescope quickfix",
         actions_paths = {
           "~/.config/nvim/lua/custom/actions.json",
         },
