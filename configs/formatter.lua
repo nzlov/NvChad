@@ -43,6 +43,9 @@ require("formatter").setup {
     markdown = {
       require("formatter.filetypes.markdown").prettierd,
     },
+    vue = {
+      require("formatter.filetypes.vue").prettier,
+    },
 
     -- Use the special "*" filetype for defining formatter configurations on
     -- any filetype

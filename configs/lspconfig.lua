@@ -30,7 +30,6 @@ local servers = {
   "clangd",
   "pylsp",
   "jsonls",
-  "volar",
   "graphql",
   "rust_analyzer",
 }
@@ -44,6 +43,17 @@ for _, lsp in ipairs(servers) do
     },
   }
 end
+
+lspconfig.volar.setup {
+  filetypes = {
+    "typescript",
+    "javascript",
+    "javascriptreact",
+    "typescriptreact",
+    "vue",
+    "json",
+  },
+}
 
 lspconfig.gopls.setup {
   on_attach = on_attach,
