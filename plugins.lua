@@ -257,14 +257,14 @@ local plugins = {
       require("auto-dark-mode").setup {
         update_interval = 1000,
         set_dark_mode = function()
-          vim.g.nvchad_theme = "onedark"
+          vim.g.nvchad_theme = "gruvbox"
           vim.g.transparency = false
-          require("nvchad.utils").replace_word('theme = "one_light', 'theme = "onedark')
+          require("nvchad.utils").replace_word('theme = "gruvbox_light', 'theme = "gruvbox')
           require("base46").load_all_highlights()
         end,
         set_light_mode = function()
-          vim.g.nvchad_theme = "one_light"
-          require("nvchad.utils").replace_word('theme = "onedark', 'theme = "one_light')
+          vim.g.nvchad_theme = "gruvbox_light"
+          require("nvchad.utils").replace_word('theme = "gruvbox', 'theme = "gruvbox_light')
           vim.g.transparency = true
           require("base46").load_all_highlights()
         end,
