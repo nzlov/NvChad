@@ -259,12 +259,12 @@ local plugins = {
         set_dark_mode = function()
           vim.g.nvchad_theme = "gruvbox"
           vim.g.transparency = false
-          require("nvchad.utils").replace_word('theme = "gruvbox_light', 'theme = "gruvbox')
+          require("nvchad.utils").replace_word('theme = "gruvbox_light"', 'theme = "gruvbox"')
           require("base46").load_all_highlights()
         end,
         set_light_mode = function()
           vim.g.nvchad_theme = "gruvbox_light"
-          require("nvchad.utils").replace_word('theme = "gruvbox', 'theme = "gruvbox_light')
+          require("nvchad.utils").replace_word('theme = "gruvbox"', 'theme = "gruvbox_light"')
           vim.g.transparency = true
           require("base46").load_all_highlights()
         end,
