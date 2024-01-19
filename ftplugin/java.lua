@@ -1,9 +1,11 @@
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 
+vim.api.nvim_create_augroup("Java_Group", {})
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("BufWritePre", {
+  group = "Java_Group",
   pattern = "*.java",
   callback = function()
     vim.lsp.buf.format { async = false }

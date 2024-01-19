@@ -2,30 +2,30 @@ local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
-  -- {
-  --   "rcarriga/nvim-notify",
-  --   lazy = false,
-  --   config = function()
-  --     require("notify").setup {
-  --       background_colour = "NotifyBackground",
-  --       fps = 30,
-  --       icons = {
-  --         DEBUG = "",
-  --         ERROR = "",
-  --         INFO = "",
-  --         TRACE = "✎",
-  --         WARN = "",
-  --       },
-  --       level = 2,
-  --       minimum_width = 50,
-  --       render = "default",
-  --       stages = "fade_in_slide_out",
-  --       timeout = 5000,
-  --       top_down = false,
-  --     }
-  --     vim.notify = require "notify"
-  --   end,
-  -- },
+  {
+    "rcarriga/nvim-notify",
+    lazy = false,
+    config = function()
+      require("notify").setup {
+        background_colour = "NotifyBackground",
+        fps = 30,
+        icons = {
+          DEBUG = "",
+          ERROR = "",
+          INFO = "",
+          TRACE = "✎",
+          WARN = "",
+        },
+        level = 2,
+        minimum_width = 50,
+        render = "default",
+        stages = "fade_in_slide_out",
+        timeout = 5000,
+        top_down = false,
+      }
+      vim.notify = require "notify"
+    end,
+  },
   {
     "stevearc/aerial.nvim",
     opts = {},
@@ -305,6 +305,13 @@ local plugins = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope.nvim",
     },
+  },
+  {
+    "akinsho/flutter-tools.nvim",
+    ft = "dart",
+    config = function()
+      require "custom.ftplugin.dart"
+    end,
   },
 }
 
