@@ -7,7 +7,7 @@ local plugins = {
     lazy = false,
     config = function()
       require("notify").setup {
-        background_colour = "NotifyBackground",
+        background_colour = "#000000",
         fps = 30,
         icons = {
           DEBUG = "",
@@ -23,7 +23,7 @@ local plugins = {
         timeout = 5000,
         top_down = false,
       }
-      vim.notify = require "notify"
+      --      vim.notify = require "notify"
     end,
   },
   {
@@ -198,6 +198,9 @@ local plugins = {
     dependencies = {
       {
         "rcarriga/nvim-dap-ui",
+        dependencies = {
+          "nvim-neotest/nvim-nio",
+        },
         config = function()
           require("custom.configs.dapui").setup()
         end,
@@ -234,6 +237,22 @@ local plugins = {
   -- {
   --   "folke/which-key.nvim",
   --   enabled = true,
+  -- },
+  -- {
+  --   "nvim-java/nvim-java",
+  --   ft = "java",
+  --   dependencies = {
+  --     "nvim-java/lua-async-await",
+  --     "nvim-java/nvim-java-core",
+  --     "nvim-java/nvim-java-test",
+  --     "nvim-java/nvim-java-dap",
+  --     "MunifTanjim/nui.nvim",
+  --     "neovim/nvim-lspconfig",
+  --     "mfussenegger/nvim-dap",
+  --   },
+  --   config = function()
+  --     require "custom.ftplugin.njava"
+  --   end,
   -- },
   {
     "mfussenegger/nvim-jdtls",

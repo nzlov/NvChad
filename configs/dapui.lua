@@ -87,7 +87,10 @@ M.setup = function()
   dapui.setup(config)
 
   dap.listeners.after.event_initialized["dapui_config"] = function()
-    dapui.open()
+    dapui.float_element(
+      "console",
+      { position = "center", height = math.floor(vim.o.lines * 0.9), width = math.floor(vim.o.columns * 0.8) }
+    )
   end
   dap.listeners.before.event_terminated["dapui_config"] = function()
     dapui.close()

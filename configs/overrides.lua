@@ -48,6 +48,10 @@ M.mason = {
     "yaml-language-server",
     "protolint",
   },
+  registries = {
+    "github:nvim-java/mason-registry",
+    "github:mason-org/mason-registry",
+  },
 }
 
 M.telescope = {
